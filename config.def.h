@@ -17,11 +17,11 @@
 
 /* Firefox */
 #define CMD_FF_DISCORD      "firefox --class FFDiscord  --no-remote -P discord  --new-window 'https://discord.com/channels/@me'"
-#define CMD_FF_DISCORDDEV   "firefox --class FFDev      --no-remote -P dev      --new-window 'https://discord.com/channels/@me'"
+#define CMD_FF_DISCORDDEV   "firefox --class FFDev      --no-remote -P dev      --new-window 'https://discord.com/channels/1063059479245103218/1063524007451828314'"
 #define CMD_FF_TV           "firefox --class FFTrading  --no-remote -P trading  --new-window 'https://tradingview.com/chart/jgs0xOGh'"
 #define CMD_FF_GENERIC      "firefox --class FFBrowser  --no-remote -P default  --new-window"
 #define CMD_FF_CHATGPT      "firefox --class FFDev      --no-remote -P dev      --new-window 'https://chat.openai.com'"
-#define CMD_FF_GITHUB       "firefox --class FFDev      --no-remote -P dev      --new-window 'https://chat.openai.com'"
+#define CMD_FF_GITHUB       "firefox --class FFDev      --no-remote -P dev      --new-window 'https://github.com/notzSph?tab=repositories'"
 #define CMD_FF_EXCAL        "firefox --class FFExcal    --no-remote -P excal    --new-window 'https://excalidraw.com'"
 #define CMD_FF_NOTION       "firefox --class FFNotion   --no-remote -P notion   --new-window 'https://notion.so'"
 #define CMD_FF_YT           "firefox --class FFYoutube  --no-remote -P youtube  --new-window 'https://youtube.com'"
