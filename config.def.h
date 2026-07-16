@@ -16,15 +16,17 @@
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* Firefox */
-#define CMD_FF_DISCORD   "firefox --class FFDiscord  --no-remote -P discord  --new-window 'https://discord.com/channels/@me'"
-#define CMD_FF_TV        "firefox --class FFTrading  --no-remote -P trading  --new-window 'https://tradingview.com/chart/jgs0xOGh'"
-#define CMD_FF_GENERIC   "firefox --class FFBrowser  --no-remote -P default  --new-window"
-#define CMD_FF_CHATGPT   "firefox --class FFChatGPT  --no-remote -P chatgpt  --new-window 'https://chat.openai.com'"
-#define CMD_FF_EXCAL     "firefox --class FFExcal    --no-remote -P excal    --new-window 'https://excalidraw.com'"
-#define CMD_FF_NOTION    "firefox --class FFNotion   --no-remote -P notion   --new-window 'https://notion.so'"
-#define CMD_FF_YT        "firefox --class FFYoutube  --no-remote -P youtube  --new-window 'https://youtube.com'"
-#define CMD_FF_SPOTIFY   "firefox --class FFSpotify  --no-remote -P spotify  --new-window 'https://open.spotify.com/collection/tracks'"
-#define CMD_FF_TELEGRAM  "firefox --class FFTelegram --no-remote -P telegram --new-window 'https://web.telegram.org/a'"
+#define CMD_FF_DISCORD      "firefox --class FFDiscord  --no-remote -P discord  --new-window 'https://discord.com/channels/@me'"
+#define CMD_FF_DISCORDDEV   "firefox --class FFDev      --no-remote -P dev      --new-window 'https://discord.com/channels/@me'"
+#define CMD_FF_TV           "firefox --class FFTrading  --no-remote -P trading  --new-window 'https://tradingview.com/chart/jgs0xOGh'"
+#define CMD_FF_GENERIC      "firefox --class FFBrowser  --no-remote -P default  --new-window"
+#define CMD_FF_CHATGPT      "firefox --class FFDev      --no-remote -P dev      --new-window 'https://chat.openai.com'"
+#define CMD_FF_GITHUB       "firefox --class FFDev      --no-remote -P dev      --new-window 'https://chat.openai.com'"
+#define CMD_FF_EXCAL        "firefox --class FFExcal    --no-remote -P excal    --new-window 'https://excalidraw.com'"
+#define CMD_FF_NOTION       "firefox --class FFNotion   --no-remote -P notion   --new-window 'https://notion.so'"
+#define CMD_FF_YT           "firefox --class FFYoutube  --no-remote -P youtube  --new-window 'https://youtube.com'"
+#define CMD_FF_SPOTIFY      "firefox --class FFSpotify  --no-remote -P spotify  --new-window 'https://open.spotify.com/collection/tracks'"
+#define CMD_FF_TELEGRAM     "firefox --class FFTelegram --no-remote -P telegram --new-window 'https://web.telegram.org/a'"
 
 /* STYLES */
 
@@ -101,7 +103,7 @@ static const Rule rules[] = {
     { "FFTelegram",  NULL,       NULL,       1 << 1,       0,           -1 },
     { "FFTrading",   NULL,       NULL,       1 << 2,       0,           -1 },
     { "FFBrowser",   NULL,       NULL,       1 << 3,       0,           -1 },
-    { "FFChatGPT",   NULL,       NULL,       1 << 4,       0,           -1 },
+    { "FFDev",       NULL,       NULL,       1 << 4,       0,           -1 },
     { "FFExcal",     NULL,       NULL,       1 << 5,       0,           -1 },
     { "FFNotion",    NULL,       NULL,       1 << 6,       0,           -1 },
     { "FFYoutube",   NULL,       NULL,       1 << 7,       0,           -1 },
@@ -151,15 +153,18 @@ static const Key keys[] = {
 	{ MODKEY|MODKEY2|ShiftMask,     XK_F5,          spawn,          SHCMD("~/scripts/stop_record.sh")       },
 
 	/* Firefox */
-    { MODKEY,                       XK_d,           spawn,          SHCMD(CMD_FF_DISCORD)  },
-    { MODKEY2|ShiftMask,            XK_t,           spawn,          SHCMD(CMD_FF_TELEGRAM) },
-    { MODKEY|ShiftMask,             XK_t,           spawn,          SHCMD(CMD_FF_TV)       },
-    { MODKEY,                       XK_f,           spawn,          SHCMD(CMD_FF_GENERIC)  },
-    { MODKEY,                       XK_g,           spawn,          SHCMD(CMD_FF_CHATGPT)  },
-    { MODKEY,                       XK_e,           spawn,          SHCMD(CMD_FF_EXCAL)    },
-    { MODKEY2,                      XK_n,           spawn,          SHCMD(CMD_FF_NOTION)   },
-    { MODKEY,                       XK_y,           spawn,          SHCMD(CMD_FF_YT)       },
-    { MODKEY,                       XK_s,           spawn,          SHCMD(CMD_FF_SPOTIFY)  },
+    { MODKEY,                       XK_d,           spawn,          SHCMD(CMD_FF_DISCORD)     },
+    { MODKEY|ShiftMask,             XK_d,           spawn,          SHCMD(CMD_FF_DISCORDDEV)  },
+    { MODKEY2|ShiftMask,            XK_t,           spawn,          SHCMD(CMD_FF_TELEGRAM)    },
+    { MODKEY2|ShiftMask,            XK_t,           spawn,          SHCMD(CMD_FF_TELEGRAM)    },
+    { MODKEY|ShiftMask,             XK_t,           spawn,          SHCMD(CMD_FF_TV)          },
+    { MODKEY,                       XK_f,           spawn,          SHCMD(CMD_FF_GENERIC)     },
+    { MODKEY,                       XK_g,           spawn,          SHCMD(CMD_FF_CHATGPT)     },
+    { MODKEY|ShiftMask,             XK_g,           spawn,          SHCMD(CMD_FF_GITHUB)      },
+    { MODKEY,                       XK_e,           spawn,          SHCMD(CMD_FF_EXCAL)       },
+    { MODKEY2,                      XK_n,           spawn,          SHCMD(CMD_FF_NOTION)      },
+    { MODKEY,                       XK_y,           spawn,          SHCMD(CMD_FF_YT)          },
+    { MODKEY,                       XK_s,           spawn,          SHCMD(CMD_FF_SPOTIFY)     },
 
 	/* Topbar */
     { MODKEY,                       XK_b,           togglebar,      {0} },
